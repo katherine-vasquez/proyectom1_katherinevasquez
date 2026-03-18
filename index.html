@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- ✔ Parte de la consigna: Identidad de la aplicación (título visible en pestaña) -->
     <title>Generador de Paletas de Colores</title>
     
+    <!-- ✔ Separación de responsabilidades (buena práctica: estilos en CSS) -->
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+
+    <!-- ✔ CONSIGNA: Uso de HTML semántico -->
+    <!-- Header representa el encabezado principal de la aplicación -->
     <header>
         <h1>Generador de Paletas de Colores</h1>
     </header>   
     
+    <!-- ✔ CONSIGNA: Estructura semántica -->
+    <!-- Main contiene el contenido principal de la app -->
     <main>
+
+        <!-- ✔ CONSIGNA: Interacción del usuario -->
+        <!-- Sección de controles donde el usuario define cómo se generará la paleta -->
         <section class="controls">
-       <label for="paletteSize">Tamaño de la paleta:</label>
 
-       <select id="paletteSize">
-           <option value="6">6 colores</option>
-           <option value="8">8 colores</option> 
-           <option value="9">9 colores</option>
+            <!-- ✔ CONSIGNA: Accesibilidad -->
+            <!-- Label correctamente asociado al select mediante el atributo "for" -->
+            <label for="paletteSize">Tamaño de la paleta:</label>
 
-           </select>  
-              <button id="generateBtn">Generar Paleta</button>
+            <!-- ✔ CONSIGNA: Seleccionar tamaño de la paleta -->
+            <!-- Permite elegir entre 6, 8 o 9 colores -->
+            <select id="paletteSize">
+                <option value="6">6 colores</option>
+                <option value="8">8 colores</option> 
+                <option value="9">9 colores</option>
+            </select>  
+
+            <!-- ✔ CONSIGNA: Botón principal -->
+            <!-- Este botón activará la generación de la paleta desde JavaScript -->
+            <button id="generateBtn">Generar Paleta</button>
 
         </section>
 
+        <!-- ✔ CONSIGNA: Visualización de resultados -->
+        <!-- Contenedor donde JavaScript renderizará dinámicamente los colores -->
         <section id="paletteContainer"> 
+
+            <!-- Aquí se insertarán los divs de colores dinámicamente -->
 
         </section>
         
     </main>
+
+    <!-- ✔ CONEXIÓN CON JAVASCRIPT -->
+    <!-- Permite que la lógica haga funcionar la aplicación -->
+    <script src="script.js"></script>
 
 </body>
 </html>
