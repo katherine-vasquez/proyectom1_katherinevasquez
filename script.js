@@ -1,10 +1,14 @@
-// Seleccionar el botón desde el HTML
+// Seleccionar elementos del DOM
 const generateBtn = document.getElementById("generateBtn");
+const paletteSize = document.getElementById("paletteSize");
 
-// Escuchar el evento click
+// Evento click del botón
 generateBtn.addEventListener("click", function () {
-    
-    // Acción de prueba
-    console.log("Botón funcionando");
+
+    // Obtener el valor del select
+    const cantidad = paletteSize.value;
+
+    // Mostrar en consola
+    console.log("Cantidad seleccionada:", cantidad);
 
 });
