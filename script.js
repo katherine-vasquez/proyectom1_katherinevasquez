@@ -1,6 +1,7 @@
 // Seleccionar elementos del DOM
 const generateBtn = document.getElementById("generateBtn");
 const paletteSize = document.getElementById("paletteSize");
+const paletteContainer = document.getElementById("paletteContainer");
 
 // Función para generar un color HSL aleatorio
 function generarColorHSL() {
@@ -31,11 +32,25 @@ generateBtn.addEventListener("click", function () {
     // Obtener el valor del select
     const cantidad = paletteSize.value;
 
+    paletteContainer.innerHTML = "";
+
+    console.log("Cantidad seleccionada:", cantidad);
+
+    for (let i = 0; i < cantidad; i++) {
+        
     const colorHSL = generarColorHSL();
     const colorHEX = generarColorHEX();
 
-    // Mostrar en consola
-    console.log("Cantidad seleccionada:", cantidad);
     console.log("Color HSL:", colorHSL);
     console.log("Color HEX:", colorHEX);
+
+    const colorDiv = document.createElement("div");
+    colorDiv.style.backgroundColor = colorHEX;
+    colorDiv.textContent = colorHEX;
+    paletteContainer.appendChild(colorDiv);
+
+
+
+  
+    }
 });
