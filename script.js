@@ -2,6 +2,7 @@
 const generateBtn = document.getElementById("generateBtn");
 const paletteSize = document.getElementById("paletteSize");
 const paletteContainer = document.getElementById("paletteContainer");
+const toast = document.getElementById("toast");
 
 // Función para generar un color HSL aleatorio
 function generarColorHSL() {
@@ -26,6 +27,16 @@ function generarColorHEX() {
     return color;
 }
 
+// Función para mostrar un mensaje de toast
+function mostrarToast(mensaje) {
+    toast.textContent = mensaje;
+    toast.style.opacity = "1";
+
+    setTimeout(() => {
+        toast.style.opacity = "0";
+    }, 1500);
+}
+
 // Evento click del botón
 generateBtn.addEventListener("click", function () {
 
@@ -47,6 +58,12 @@ generateBtn.addEventListener("click", function () {
     const colorDiv = document.createElement("div");
     colorDiv.style.backgroundColor = colorHEX;
     colorDiv.textContent = colorHEX;
+
+    colorDiv.addEventListener("click", function () {
+    navigator.clipboard.writeText(colorHEX);
+    mostrarToast("Copiado: " + colorHEX);
+});
+
     paletteContainer.appendChild(colorDiv);
 
 
