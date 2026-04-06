@@ -43,6 +43,10 @@ h1 {
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .app-description {
@@ -343,4 +347,32 @@ button:hover {
 #copyPaletteBtn:active {
     transform: translateY(1px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* ========================= */
+/* 🔥 HISTORIAL VACÍO */
+/* ========================= */
+.empty-history {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    color: #444;
+    opacity: 0.7;
+    padding: 25px;
+    font-style: italic;
+}
+
+/* ✨ animación suave */
+.empty-history {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInEmpty 0.6s ease forwards;
+}
+
+@keyframes fadeInEmpty {
+    to {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
 }
