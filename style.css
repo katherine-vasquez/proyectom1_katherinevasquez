@@ -5,18 +5,70 @@
     box-sizing: border-box;
 }
 
-/* Estilo general */
+/* ========================= */
+/* 🔥 CAMBIO 1: BODY AJUSTADO */
+/* ========================= */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
+    background: linear-gradient(135deg, #E6D9FF, #C084FC);
+    color: #1e1e1e;
+     min-height: 100vh;
+}
+
+/* ========================= */
+/* 🔥 CAMBIO 2: CONTENEDOR NUEVO */
+/* ========================= */
+.container {
+    width: 100%;
+
+    min-height: 100vh;  /* 🔥 CLAVE para ocupar toda la pantalla */
+
+    margin: 0 auto;
     padding: 30px;
-    background-color: #f5f5f5;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    background: transparent; /* 🔥 deja ver el degradado */
 }
 
 /* Título */
 h1 {
     margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
+
+.app-description {
+    max-width: 600px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #2d2d2d;
+    opacity: 0.85;
+}
+
+/* 🔥 ANIMACIÓN ENTRADA */
+.app-description {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* KEYFRAMES */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Controles (select + botón) */
 .controls {
@@ -42,25 +94,36 @@ button:hover {
     background-color: #555;
 }
 
-/* Contenedor de colores (GRID profesional) */
+/* ========================= */
+/* 🔥 CAMBIO 3: GRID FIJO Y ESTABLE */
+/* ========================= */
+
 #paletteContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    display: grid !important;
+    grid-template-columns: repeat(4, 120px) !important;
     gap: 15px;
-    margin-top: 30px;
+    width: 100% !important;
+    /* border: 3px solid green; */
+    justify-content: center;
 }
 
-/* Cada bloque de color */
+/* ========================= */
+/* BLOQUES DE COLOR */
+/* ========================= */
 #paletteContainer div {
     height: 120px;
+
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-end;
+
     font-weight: bold;
-    color: white;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s ease;
+    padding-bottom: 10px;
+
+    box-sizing: border-box;
 }
 
 /* Efecto hover */
@@ -69,7 +132,8 @@ button:hover {
 }
 
 /* Toast de notificación */
-#toast { position: fixed;
+#toast {
+    position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -81,4 +145,202 @@ button:hover {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+}
+
+/* Texto dentro de cada color */
+#paletteContainer span {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+#historyContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 15px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    #historyContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #historyContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    #historyContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.history-card {
+    height: 120px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    display: flex;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.history-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.history-color {
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.history-card:hover .history-color {
+    transform: scale(1.05);
+}
+
+
+.history-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    font-size: 11px;
+    padding: 5px 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.9);
+
+    cursor: pointer;
+
+    opacity: 0;
+    transform: translateY(5px);
+
+    transition: all 0.2s ease;
+}
+
+
+#historySection {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.fav-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+
+    background: rgba(0,0,0,0.4);
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 12px;
+    padding: 3px 6px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    transition: 0.2s ease;
+}
+
+.history-card:hover .fav-btn {
+    opacity: 1;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    background: rgba(255,0,0,0.7);
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 12px;
+    padding: 3px 6px;
+
+    cursor: pointer;
+}
+
+/* CONTENEDOR RELATIVO */
+.history-card {
+    position: relative;
+}
+
+/* 🔥 OCULTAR TODOS LOS BOTONES */
+.history-card button {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.2s ease;
+}
+
+/* 🔥 MOSTRAR EN HOVER */
+.history-card:hover button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.use-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.delete-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+
+/* 🔥 CONTENEDOR BOTÓN COPIAR */
+.copy-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 40px;   /* 🔥 separación con la paleta */
+    margin-bottom: 20px;
+}
+
+#copyPaletteBtn {
+    background: linear-gradient(135deg, #6D28D9, #9333EA);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    will-change: transform;
+}
+
+#copyPaletteBtn:hover {
+    transform: translateY(-2px); /* 🔥 solo movimiento */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+#copyPaletteBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }

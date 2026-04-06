@@ -14,10 +14,17 @@
 </head>
 <body>
 
+    <div class="container">
+
     <!-- ✔ CONSIGNA: Uso de HTML semántico -->
     <!-- Header representa el encabezado principal de la aplicación -->
     <header>
         <h1>Generador de Paletas de Colores</h1>
+
+        <p class="app-description">
+    Genera paletas de colores aleatorias, bloquea los tonos que te gusten, copia códigos en formato HEX o HSL y guarda tus combinaciones favoritas. También puedes reutilizarlas, marcarlas como favoritas o eliminarlas fácilmente desde el historial.
+</p>
+
     </header>   
     
     <!-- ✔ CONSIGNA: Estructura semántica -->
@@ -40,9 +47,18 @@
                 <option value="9">9 colores</option>
             </select>  
 
+             <!-- Selector de formato de color -->
+             <label for="colorFormat">Formato de color:</label>
+
+             <select id="colorFormat">
+                <option value="hex">HEX</option>
+                <option value="hsl">HSL</option>
+            </select>
+
             <!-- ✔ CONSIGNA: Botón principal -->
             <!-- Este botón activará la generación de la paleta desde JavaScript -->
             <button id="generateBtn">Generar Paleta</button>
+            
 
         </section>
 
@@ -53,9 +69,20 @@
             <!-- Aquí se insertarán los divs de colores dinámicamente -->
 
         </section>
+
+        <div class="copy-container">
+            <button id="copyPaletteBtn">Copiar paleta</button>
+        </div>
+
+        <!-- 🔥 HISTORIAL UI -->
+    <div id="historySection">
+        <h3>Historial</h3>
+        <div id="historyContainer"></div>
+    </div>
         
     </main>
 
+    </div>
     <!-- ✔ CONEXIÓN CON JAVASCRIPT -->
     <!-- Permite que la lógica haga funcionar la aplicación -->
 
