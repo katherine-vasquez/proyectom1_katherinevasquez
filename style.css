@@ -33,7 +33,7 @@ body {
     align-items: center;
     text-align: center;
 
-    background: white;
+    background:#f9fafb;
     border-radius: 16px;
 
     box-shadow: 0 20px 50px rgba(0,0,0,0.08);
@@ -41,7 +41,7 @@ body {
 
 /* Título */
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     display: flex;
     justify-content: center;
@@ -50,24 +50,26 @@ h1 {
 
     font-size: 34px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.5px;
+
+    color:#111;
     
 }
 
 .app-description {
     max-width: 600px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     font-size: 15px;
     line-height: 1.5;
-    color: #2d2d2d;
+    color:#6b7280;
     opacity: 0.85;
-    margin-bottom: 10px;
 }
 
  .subtitle {
-    font-size: 16px;
-    color: #6b7280;
-    margin-bottom: 25px;
+    font-size: 18px;
+    color:  #374151;
+    font-weight: 500;
+    margin-bottom: 15px;
 }
 
 /* 🔥 ANIMACIÓN ENTRADA */
