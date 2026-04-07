@@ -215,6 +215,16 @@ let history = JSON.parse(localStorage.getItem("paletteHistory")) || [];
 
     historyContainer.innerHTML = "";
 
+    // 🔥 MENSAJE SI NO HAY HISTORIAL
+if (history.length === 0) {
+    historyContainer.innerHTML = `
+        <div class="empty-history">
+            🎨 Aún no hay paletas generadas
+        </div>
+    `;
+    return;
+}
+
     history.forEach((palette, index) => {
 
         const card = document.createElement("div");

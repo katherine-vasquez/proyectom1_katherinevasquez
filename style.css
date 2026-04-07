@@ -104,7 +104,7 @@ button:hover {
 
 #paletteContainer {
     display: grid !important;
-    grid-template-columns: repeat(4, 120px) !important;
+    grid-template-columns: repeat(4, minmax(80px, 1fr)) !important;
     gap: 15px;
     width: 100% !important;
     /* border: 3px solid green; */
@@ -355,24 +355,77 @@ button:hover {
 /* ========================= */
 .empty-history {
     width: 100%;
+    grid-column: 1 / -1; /* 🔥 clave para centrar en grid */
     text-align: center;
     font-size: 15px;
     color: #444;
-    opacity: 0.7;
+    opacity: 0;
     padding: 25px;
     font-style: italic;
-}
 
-/* ✨ animación suave */
-.empty-history {
-    opacity: 0;
     transform: translateY(10px);
     animation: fadeInEmpty 0.6s ease forwards;
 }
 
+/* ✨ animación suave */
 @keyframes fadeInEmpty {
     to {
         opacity: 0.7;
         transform: translateY(0);
+    }
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE FIX MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* 🔥 Evita que todo se salga de pantalla */
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    /* 🔥 CONTROLES EN COLUMNA EN MÓVIL */
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    select, button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* 🔥 PALABRA PARTIDA / TEXTO RARO */
+    h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .app-description {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    /* 🔥 PALETA: evita overflow horizontal */
+    #paletteContainer {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* 🔥 HISTORIAL MÁS LIMPIO EN MÓVIL */
+    #historyContainer {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 10px;
+    }
+
+    .history-card {
+        height: 100px;
     }
 }
