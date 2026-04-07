@@ -83,7 +83,8 @@ function crearColorDiv(colorObj, formato) {
     e.stopPropagation();
 
     colorObj.locked = !colorObj.locked;
-    lockBtn.textContent = colorObj.locked ? "🔒" : "🔓";
+
+    renderPalette(colorFormat.value);
 });
 
 
@@ -372,20 +373,6 @@ if (history.length === 0) {
             renderHistory();
         });
 
-        // 🎯 botón usar paleta (aplicar al generador)
-            const useBtn = document.createElement("button");
-            useBtn.classList.add("use-btn");
-            useBtn.innerText = "Usar";
-
-            useBtn.addEventListener("click", (e) => {
-                 e.stopPropagation();
-
-                 const colors = palette.colors.map(c => c.hex);
-
-                applyPalette(colors);
-         });
-
-
 
 
         // colores de la paleta
@@ -396,23 +383,21 @@ if (history.length === 0) {
             card.appendChild(colorDiv);
         });
 
-        // botón usar
-        const btn = document.createElement("button");
-        btn.classList.add("history-btn");
-        btn.innerText = "Usar";
+// 🎯 botón usar paleta (posición final: abajo izquierda)
+const useBtn = document.createElement("button");
+useBtn.classList.add("use-btn");
+useBtn.innerText = "Usar";
 
-        btn.addEventListener("click", (e) => {
-            e.stopPropagation();
+useBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-            currentPalette = JSON.parse(JSON.stringify(palette.colors));
-            renderPalette(colorFormat.value);
-        });
-
+    currentPalette = JSON.parse(JSON.stringify(palette.colors));
+    renderPalette(colorFormat.value);
+});
 
         // agregar elementos a la card
 
         card.appendChild(useBtn);
-        card.appendChild(btn);
         card.appendChild(favBtn);
         card.appendChild(deleteBtn);
 

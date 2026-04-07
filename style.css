@@ -18,7 +18,7 @@ body {
 /* ========================= */
 /* 🔥 CAMBIO 2: CONTENEDOR NUEVO */
 /* ========================= */
-.container {
+
    .container {
     width: 100%;
     max-width: 1100px;
@@ -261,23 +261,29 @@ button:hover {
     margin-top: 20px;
 }
 
+/* CONTENEDOR RELATIVO */
+.history-card {
+    position: relative;
+}
+
+
 .fav-btn {
     position: absolute;
     top: 8px;
     left: 8px;
 
-    background: rgba(0,0,0,0.4);
-    color: white;
+    background: rgba(0,0,0,0.5);
+    color:#FFD700;
 
     border: none;
     border-radius: 6px;
 
-    font-size: 12px;
+    font-size: 13px;
     padding: 3px 6px;
 
     cursor: pointer;
 
-    opacity: 0;
+    opacity: 1;
     transition: 0.2s ease;
 }
 
@@ -297,9 +303,13 @@ button:hover {
     border-radius: 6px;
 
     font-size: 12px;
-    padding: 3px 6px;
+    padding: 2px 5px;
 
     cursor: pointer;
+
+    opacity: 0;
+    transition: all 0.2s ease;
+    
 }
 
 /* CONTENEDOR RELATIVO */
@@ -307,12 +317,6 @@ button:hover {
     position: relative;
 }
 
-/* 🔥 OCULTAR TODOS LOS BOTONES */
-.history-card button {
-    opacity: 0;
-    transform: translateY(5px);
-    transition: all 0.2s ease;
-}
 
 /* 🔥 MOSTRAR EN HOVER */
 .history-card:hover button {
@@ -321,9 +325,21 @@ button:hover {
 }
 
 .use-btn {
-    position: absolute;
-    top: 8px;
-    left: 8px;
+   position: absolute;
+    bottom: 8px;   /* 👈 LO BAJA */
+    left: 8px;     /* 👈 LO MANTIENE A LA IZQUIERDA */
+
+    font-size: 11px;
+    padding: 4px 8px;
+
+    border-radius: 8px;
+    background: rgba(255,255,255,0.9);
+
+    cursor: pointer;
+
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.2s ease;
 }
 
 .delete-btn {
@@ -332,6 +348,12 @@ button:hover {
     right: 8px;
 }
 
+/* 🔥 SOLO ESTOS BOTONES APARECEN EN HOVER */
+.history-card:hover .use-btn,
+.history-card:hover .delete-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* 🔥 CONTENEDOR BOTÓN COPIAR */
 .copy-container {
