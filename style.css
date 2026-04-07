@@ -10,7 +10,7 @@
 /* ========================= */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #E6D9FF, #C084FC);
+    background: linear-gradient(135deg, #f5f7fa, #e9edf3);
     color: #1e1e1e;
      min-height: 100vh;
 }
@@ -19,20 +19,24 @@ body {
 /* 🔥 CAMBIO 2: CONTENEDOR NUEVO */
 /* ========================= */
 .container {
+   .container {
     width: 100%;
+    max-width: 1100px;
 
-    min-height: 100vh;  /* 🔥 CLAVE para ocupar toda la pantalla */
+    min-height: 100vh;
 
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 30px;
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     text-align: center;
 
-    background: transparent; /* 🔥 deja ver el degradado */
+    background: white;
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
 /* Título */
@@ -44,9 +48,10 @@ h1 {
     gap: 10px;
     flex-wrap: wrap;
 
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    
 }
 
 .app-description {
@@ -56,6 +61,13 @@ h1 {
     line-height: 1.5;
     color: #2d2d2d;
     opacity: 0.85;
+    margin-bottom: 10px;
+}
+
+ .subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 25px;
 }
 
 /* 🔥 ANIMACIÓN ENTRADA */
@@ -76,26 +88,29 @@ h1 {
 
 /* Controles (select + botón) */
 .controls {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;   
+    gap: 10px;
 }
 
-select, button {
-    padding: 10px;
-    margin: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+select {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    color: #111;
 }
 
 button {
-    cursor: pointer;
-    background-color: #333;
+    background: #111827;
     color: white;
     border: none;
+    font-weight: 500;
 }
 
 button:hover {
-    background-color: #555;
+    background: #1f2937;
 }
 
 /* ========================= */
@@ -128,6 +143,8 @@ button:hover {
     padding-bottom: 10px;
 
     box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
 }
 
 /* Efecto hover */
@@ -156,8 +173,8 @@ button:hover {
     background: rgba(0, 0, 0, 0.6);
     color: white;
     font-size: 12px;
-    padding: 3px 8px;
-    border-radius: 5px;
+    padding: 4px 10px;
+    border-radius: 8px;
 }
 
 #historyContainer {
@@ -188,24 +205,23 @@ button:hover {
 
 .history-card {
     height: 120px;
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
 
     display: flex;
 
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(8px);
+    background:#ffffff;;
 
-    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .history-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 .history-color {
@@ -328,15 +344,11 @@ button:hover {
 }
 
 #copyPaletteBtn {
-    background: linear-gradient(135deg, #6D28D9, #9333EA);
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: white;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease; 
-    will-change: transform;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 12px 22px;
 }
 
 #copyPaletteBtn:hover {
