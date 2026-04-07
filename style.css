@@ -429,3 +429,39 @@ button:hover {
         height: 100px;
     }
 }
+
+.copy-container {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#downloadImageBtn {
+    background: linear-gradient(135deg, #2563EB, #3B82F6);
+}
+
+#downloadTxtBtn {
+    background: linear-gradient(135deg, #059669, #10B981);
+}
+
+#downloadCssBtn {
+    background: linear-gradient(135deg, #EA580C, #F97316);
+}
+
+#downloadImageBtn,
+#downloadTxtBtn,
+#downloadCssBtn {
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#downloadImageBtn:hover,
+#downloadTxtBtn:hover,
+#downloadCssBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}

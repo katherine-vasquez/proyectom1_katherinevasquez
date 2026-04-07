@@ -7,6 +7,9 @@ const paletteContainer = document.getElementById("paletteContainer");
 const toast = document.getElementById("toast");
 const colorFormat = document.getElementById("colorFormat");
 const copyPaletteBtn = document.getElementById("copyPaletteBtn");
+const downloadImageBtn = document.getElementById("downloadImageBtn");
+const downloadTxtBtn = document.getElementById("downloadTxtBtn");
+const downloadCssBtn = document.getElementById("downloadCssBtn");
 
 colorFormat.value = localStorage.getItem("format") || "hex";
 
@@ -190,6 +193,110 @@ copyPaletteBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(texto);
 
     mostrarToast("Paleta copiada 🎨");
+});
+
+// =======================
+// DESCARGAR COMO IMAGEN
+// =======================
+downloadImageBtn.addEventListener("click", () => {
+
+    if (!currentPalette.length) {
+        mostrarToast("No hay paleta para descargar");
+        return;
+    }
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const width = 1000;
+    const height = 300;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    const blockWidth = width / currentPalette.length;
+
+    currentPalette.forEach((colorObj, i) => {
+        ctx.fillStyle = colorObj.hex;
+        ctx.fillRect(i * blockWidth, 0, blockWidth, height);
+
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 16px Arial";
+        ctx.textAlign = "center";
+
+        const formato = colorFormat.value === "hsl" ? colorObj.hsl : colorObj.hex;
+
+        ctx.fillText(
+            formato,
+            i * blockWidth + blockWidth / 2,
+            height - 20
+        );
+    });
+
+    ctx.fillStyle = "#000";
+    ctx.font = "bold 20px Arial";
+    ctx.fillText("Color Pro Studio", width / 2, 30);
+
+    const link = document.createElement("a");
+    link.download = "color-pro-studio.png";
+    link.href = canvas.toDataURL();
+    link.click();
+
+    mostrarToast("Imagen descargada");
+});
+
+// =======================
+// DESCARGAR COMO TXT
+// =======================
+downloadTxtBtn.addEventListener("click", () => {
+
+    if (!currentPalette.length) {
+        mostrarToast("No hay paleta para descargar");
+        return;
+    }
+
+    const formato = colorFormat.value;
+
+    const contenido = currentPalette.map(colorObj => {
+        return formato === "hsl" ? colorObj.hsl : colorObj.hex;
+    }).join("\n");
+
+    const blob = new Blob([contenido], { type: "text/plain" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "palette.txt";
+    link.click();
+
+    mostrarToast("Archivo TXT descargado");
+});
+
+// =======================
+// DESCARGAR COMO CSS
+// =======================
+downloadCssBtn.addEventListener("click", () => {
+
+    if (!currentPalette.length) {
+        mostrarToast("No hay paleta para descargar");
+        return;
+    }
+
+    let css = ":root {\n";
+
+    currentPalette.forEach((colorObj, i) => {
+        css += `  --color-${i + 1}: ${colorObj.hex};\n`;
+    });
+
+    css += "}";
+
+    const blob = new Blob([css], { type: "text/css" });
+
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "palette.css";
+    link.click();
+
+    mostrarToast("Archivo CSS descargado");
 });
 
 // 🔥 FUNCIÓN PARA APLICAR PALETA DESDE HISTORIAL
