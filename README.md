@@ -111,5 +111,8 @@ proyectom1_katherinevasquez/
 ☁️ Exportación JSON avanzada
 🔌 Integración con herramientas de diseño (Figma)
 
+📄 Documentación del proyecto (PDF):
+https://github.com/katherine-vasquez/proyectom1_katherinevasquez/blob/main/DOCUMENTACION_PROYECTO_M1.pdf
+
 👩‍💻 Autora
 Katherine Vasquez
