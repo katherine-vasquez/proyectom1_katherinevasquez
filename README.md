@@ -6,14 +6,20 @@ Color Pro Studio es una aplicación web interactiva que permite generar paletas 
 
 Permite generar, bloquear, copiar y exportar paletas en múltiples formatos, mejorando el flujo de trabajo creativo.
 
+<br><br>
+---
 🌐 Demo en vivo
 
 👉 https://katherine-vasquez.github.io/proyectom1_katherinevasquez/
 
+<br><br>
+---
 📸 Vista previa de la aplicación
 <p align="center"> <img src="color-pro-studio-preview.png" width="700"/> </p>
 
 
+<br><br>
+---
 🚀 Cómo usar la aplicación
 Selecciona el tamaño de la paleta (6, 8 o 9 colores).  
 
@@ -36,7 +42,8 @@ Desde el historial puedes reutilizar, marcar como favorita o eliminar paletas.
 Exporta tus paletas en formatos PNG, TXT o CSS.  
 
 
-
+<br><br>
+---
 
 
 💻 Ejecución local
@@ -57,7 +64,8 @@ No se requieren dependencias adicionales.
 
 
 
-
+<br><br>
+---
 
 ✨ Funcionalidades principales
 
@@ -87,11 +95,15 @@ No se requieren dependencias adicionales.
 -⚡ Interfaz interactiva con microanimaciones  
 
 
-
+<br><br>
+---
 
 🧠 ¿Qué puede hacer el usuario?
 
 El usuario puede generar combinaciones de colores automáticamente, ajustar la paleta bloqueando tonos específicos, copiar códigos de color para usarlos en otros proyectos, guardar sus combinaciones favoritas para reutilizarlas posteriormente y exportar sus paletas en diferentes formatos como imagen (PNG), texto (TXT) o variables CSS para desarrollo web.
+
+<br><br>
+---
 
 📤 Exportación de paletas
 
@@ -101,15 +113,17 @@ El sistema permite exportar las paletas generadas de varias formas:
 
 -💾 Descargar la paleta en diferentes formatos:
 
-   -PNG (imagen de la paleta)
+   PNG (imagen de la paleta)
 
-   -TXT (lista de códigos de color)
+   TXT (lista de códigos de color)
 
-   -CSS (variables listas para usar en proyectos)
+   CSS (variables listas para usar en proyectos)
 
 
 Esto facilita el uso de las combinaciones de color en otros proyectos de diseño, desarrollo web o UI/UX.
 
+<br><br>
+---
 
 🛠️ Tech Stack
 
@@ -125,6 +139,8 @@ Esto facilita el uso de las combinaciones de color en otros proyectos de diseño
 
 -GitHub Pages → despliegue
 
+<br><br>
+---
 
 ⚙️ Funcionamiento técnico
 
@@ -142,6 +158,8 @@ Esto facilita el uso de las combinaciones de color en otros proyectos de diseño
 
 -Manejo de eventos para interacción del usuario
 
+<br><br>
+---
 
 🧠 Conocimientos aplicados
 
@@ -159,6 +177,8 @@ Esto facilita el uso de las combinaciones de color en otros proyectos de diseño
 
 -Estructura de proyectos frontend
 
+<br><br>
+---
 
 📂 Estructura del proyecto
 
@@ -174,6 +194,8 @@ proyectom1_katherinevasquez/
 
 │── README.md
 
+<br><br>
+---
 
 🚀 Mejoras futuras (roadmap)
 
@@ -189,10 +211,14 @@ proyectom1_katherinevasquez/
 
 -🔌 Integración con herramientas de diseño (Figma)
 
-
+<br><br>
+---
 📄 Documentación del proyecto (PDF):
 
 https://github.com/katherine-vasquez/proyectom1_katherinevasquez/blob/main/DOCUMENTACION_PROYECTO_M1.pdf
+
+<br><br>
+---
 
 👩‍💻 Autora
 
