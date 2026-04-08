@@ -10,21 +10,9 @@ Permite generar, bloquear, copiar y exportar paletas en múltiples formatos, mej
 
 👉 https://katherine-vasquez.github.io/proyectom1_katherinevasquez/
 
-✨ Características principales
+📸 Vista previa de la aplicación
+<p align="center"> <img src="color-pro-studio-preview.png" width="700"/> </p>
 
-🎨 Generación de paletas de colores aleatorias
-🔢 Selección de tamaño de paleta (6, 8 o 9 colores)
-🎛️ Formato de color en HEX y HSL
-📋 Visualización de cada color con su código HEX y HSL
-🖱️ Copiar color individual al hacer clic
-📋 Copiar paleta completa con un solo botón
-📋 Copiar paleta completa al portapapeles (para pegarla en cualquier herramienta o proyecto)
-🔒 Bloqueo de colores individuales
-💾 Guardado automático en localStorage
-⭐ Sistema de favoritos
-🗑️ Eliminación de paletas
-📤 Exportación en PNG, TXT y CSS
-⚡ Interfaz interactiva con microanimaciones
 
 🚀 Cómo usar la aplicación
 Selecciona el tamaño de la paleta (6, 8 o 9 colores).
@@ -38,38 +26,48 @@ Las paletas se guardan automáticamente en el historial del navegador (localStor
 Desde el historial puedes reutilizar, marcar como favorita o eliminar paletas.
 Exporta tus paletas en formatos PNG, TXT o CSS.
 
+💻 Ejecución local
+
+Si deseas ejecutar el proyecto en tu computadora:
+
+Clona el repositorio:
+git clone https://github.com/katherine-vasquez/proyectom1_katherinevasquez.git
+Abre la carpeta del proyecto
+Abre el archivo index.html en tu navegador
+
+No se requieren dependencias adicionales.
+
+✨ Funcionalidades principales
+
+🎨 Generación de paletas de colores aleatorias
+🔢 Selección de tamaño de paleta (6, 8 o 9 colores)
+🎛️ Formato de color en HEX y HSL
+📋 Visualización de cada color con su código HEX y HSL
+🖱️ Copiar color individual al hacer clic
+📋 Copiar paleta completa al portapapeles (para pegarla en cualquier herramienta o proyecto)
+🔒 Bloqueo de colores individuales
+💾 Guardado automático en localStorage
+⭐ Sistema de favoritos
+🗑️ Eliminación de paletas
+📤 Exportación en PNG, TXT y CSS
+⚡ Interfaz interactiva con microanimaciones
+
+🧠 ¿Qué puede hacer el usuario?
+
+El usuario puede generar combinaciones de colores automáticamente, ajustar la paleta bloqueando tonos específicos, copiar códigos de color para usarlos en otros proyectos, guardar sus combinaciones favoritas para reutilizarlas posteriormente y exportar sus paletas en diferentes formatos como imagen (PNG), texto (TXT) o variables CSS para desarrollo web.
 
 📤 Exportación de paletas
 
-Las paletas generadas pueden exportarse en:
+El sistema permite exportar las paletas generadas de varias formas:
 
-🖼️ PNG → imagen lista para diseño o presentación
-📄 TXT → lista de códigos HEX
-🎨 CSS → variables listas para desarrollo web
-🎯 Alcance funcional (REQUISITOS OBLIGATORIOS)
+📋 Copiar paleta completa al portapapeles
+💾 Descargar la paleta en diferentes formatos:
+PNG (imagen de la paleta)
+TXT (lista de códigos de color)
+CSS (variables listas para usar en proyectos)
 
-Esta aplicación cumple con todos los requisitos del challenge:
+Esto facilita el uso de las combinaciones de color en otros proyectos de diseño, desarrollo web o UI/UX.
 
-✔ Botón “Generar paleta” completamente funcional
-✔ Generación correcta de colores aleatorios
-✔ Render dinámico según el tamaño seleccionado (6, 8 o 9 colores)
-✔ Visualización de cada color con su código HEX o HSL
-✔ Funciona correctamente en desktop
-
-⚡ Microinteracciones y feedback
-
-✔ Microfeedback visual mediante tooltips/toasts
-✔ Animaciones sutiles en interacción
-✔ Confirmación visual al copiar colores
-✔ Estados activos en botones y selección
-
-♿ Accesibilidad
-
-✔ Uso de HTML semántico
-✔ Labels correctamente asociados
-✔ Foco visible en elementos interactivos
-✔ Buen contraste entre texto y fondos
-✔ Navegación básica compatible con teclado
 
 🛠️ Tech Stack
 HTML5 → estructura semántica
@@ -78,6 +76,15 @@ JavaScript (Vanilla) → lógica e interacción
 LocalStorage → persistencia de datos
 Git / GitHub → control de versiones
 GitHub Pages → despliegue
+
+⚙️ Funcionamiento técnico
+Generación de colores mediante valores HSL aleatorios
+Conversión automática de HSL a HEX
+Renderizado dinámico del DOM para cada paleta
+Gestión de estado con currentPalette
+Persistencia de datos en localStorage
+Sistema de historial limitado a las últimas 8 paletas
+Manejo de eventos para interacción del usuario
 
 🧠 Conocimientos aplicados
 Manipulación del DOM
