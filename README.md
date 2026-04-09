@@ -21,6 +21,8 @@ Permite generar, bloquear, copiar y exportar paletas en múltiples formatos, mej
 <br><br>
 ---
 🚀 Cómo usar la aplicación
+
+
 Selecciona el tamaño de la paleta (6, 8 o 9 colores).  
 
 Elige el formato de color (HEX o HSL).  
