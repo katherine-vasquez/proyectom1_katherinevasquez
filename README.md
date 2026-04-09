@@ -222,6 +222,13 @@ https://github.com/katherine-vasquez/proyectom1_katherinevasquez/blob/main/DOCUM
 <br><br>
 ---
 
+📁 Carpeta de Google Drive (documentación completa):
+
+https://drive.google.com/drive/folders/1l6H32iINJm_sVhPRvo58nauA0QLmNNyF?usp=sharing
+
+<br><br>
+---
+
 👩‍💻 Autora
 
 Katherine Vasquez
