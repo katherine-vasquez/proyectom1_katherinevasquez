@@ -102,7 +102,7 @@ No se requieren dependencias adicionales.
 
 🧠 ¿Qué puede hacer el usuario?
 
-El usuario puede generar combinaciones de colores automáticamente, ajustar la paleta bloqueando tonos específicos, copiar códigos de color para usarlos en otros proyectos, guardar sus combinaciones favoritas para reutilizarlas posteriormente y exportar sus paletas en diferentes formatos como imagen (PNG), texto (TXT) o variables CSS para desarrollo web.
+El usuario puede generar combinaciones de colores automáticamente, ajustar la paleta bloqueando tonos específicos y seleccionar el formato de color entre HEX y HSL según sus necesidades. Además, puede copiar códigos de color para utilizarlos en otros proyectos, guardar sus combinaciones favoritas para reutilizarlas posteriormente y exportar sus paletas en diferentes formatos como imagen (PNG), texto (TXT) o variables CSS para desarrollo web.
 
 <br><br>
 ---
